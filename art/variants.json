@@ -1,0 +1,161 @@
+{
+  "dog.dachshund": {
+    "red": {},
+    "black_tan": {
+      "fur": "slate",
+      "tan": "stone",
+      "bark": "plum",
+      "cream": "tan"
+    },
+    "chocolate": {
+      "fur": "bark",
+      "tan": "fur",
+      "bark": "plum",
+      "cream": "tan"
+    },
+    "cream": {
+      "fur": "cream",
+      "tan": "white",
+      "bark": "tan",
+      "cream": "white"
+    },
+    "blue_tan": {
+      "fur": "stone",
+      "tan": "white",
+      "bark": "slate",
+      "cream": "tan"
+    },
+    "wild_boar": {
+      "fur": "fur",
+      "tan": "stone",
+      "bark": "slate",
+      "cream": "tan"
+    }
+  },
+  "dog.beagle": {
+    "tricolor": {},
+    "lemon": {
+      "slate": "tan",
+      "stone": "cream",
+      "fur": "tan",
+      "tan": "cream"
+    }
+  },
+  "dog.border_collie": {
+    "black": {},
+    "red": {
+      "slate": "bark",
+      "stone": "fur"
+    },
+    "merle": {
+      "slate": "stone",
+      "stone": "white"
+    }
+  },
+  "dog.pug": {
+    "fawn": {},
+    "black": {
+      "fur": "slate",
+      "tan": "stone",
+      "bark": "plum",
+      "cream": "stone",
+      "slate": "plum"
+    }
+  },
+  "dog.mutt": {
+    "cinnamon": {},
+    "golden": {
+      "fur": "tan",
+      "bark": "fur",
+      "tan": "cream",
+      "cream": "white"
+    },
+    "grey": {
+      "fur": "stone",
+      "bark": "slate",
+      "tan": "cream",
+      "cream": "white"
+    },
+    "cream": {
+      "fur": "cream",
+      "bark": "tan",
+      "tan": "white",
+      "cream": "white"
+    }
+  },
+  "trainer.cap": {
+    "light": {
+      "tan": "cream",
+      "fur": "tan"
+    },
+    "medium": {},
+    "brown": {
+      "tan": "fur",
+      "fur": "bark"
+    },
+    "dark": {
+      "tan": "bark",
+      "fur": "plum"
+    }
+  },
+  "trainer.beanie": {
+    "light": {
+      "tan": "cream",
+      "fur": "tan"
+    },
+    "medium": {},
+    "brown": {
+      "tan": "fur",
+      "fur": "bark"
+    },
+    "dark": {
+      "tan": "bark",
+      "fur": "plum"
+    }
+  },
+  "trainer.long_hair": {
+    "light": {
+      "tan": "cream",
+      "fur": "tan"
+    },
+    "medium": {},
+    "brown": {
+      "tan": "fur",
+      "fur": "bark"
+    },
+    "dark": {
+      "tan": "bark",
+      "fur": "plum"
+    }
+  },
+  "trainer.hat": {
+    "light": {
+      "tan": "cream",
+      "fur": "tan"
+    },
+    "medium": {},
+    "brown": {
+      "tan": "fur",
+      "fur": "bark"
+    },
+    "dark": {
+      "tan": "bark",
+      "fur": "plum"
+    }
+  },
+  "trainer.ponytail": {
+    "light": {
+      "tan": "cream",
+      "fur": "tan"
+    },
+    "medium": {},
+    "brown": {
+      "tan": "fur",
+      "fur": "bark"
+    },
+    "dark": {
+      "tan": "bark",
+      "fur": "plum"
+    }
+  }
+}

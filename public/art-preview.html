@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dog Park · art preview</title>
+    <style>
+      :root {
+        --bg: #1f1a24;
+        --panel: #2a2331;
+        --text: #f2dfb4;
+        --muted: #8a8691;
+      }
+      body {
+        margin: 0;
+        padding: 16px;
+        background: var(--bg);
+        color: var(--text);
+        font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      h1 {
+        font-size: 18px;
+        margin: 0 0 4px;
+      }
+      p {
+        margin: 0 0 12px;
+        color: var(--muted);
+      }
+      nav {
+        margin: 0 0 12px;
+      }
+      a {
+        color: var(--text);
+      }
+      canvas {
+        display: block;
+        max-width: 100%;
+        image-rendering: pixelated;
+        background: var(--panel);
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dog Park · art preview</h1>
+    <p>Trainer (8 states), 5 breeds with their own silhouette (idle, runs, asks) and their coats, the park tileset and 3 props. Scale ×3 / ×4.</p>
+    <nav>
+      Scene: <a href="?map=park">park</a> · <a href="?map=forest">forest</a> ·
+      <a href="?map=agility">agility</a> · <a href="?map=beach">beach</a> · <a href="?map=square">square</a> ·
+      <a href="?map=snow">snow</a>
+    </nav>
+    <canvas id="park"></canvas>
+    <canvas id="catalogue"></canvas>
+    <script type="module" src="/js/art-preview.js"></script>
+  </body>
+</html>

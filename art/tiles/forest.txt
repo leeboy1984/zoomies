@@ -1,0 +1,258 @@
+# Forest tileset. Opaque ground; objects with transparency and an outline. Light from the top left.
+legend
+  . transparent
+  k ink
+  g grass
+  m leaf
+  e leaf_dark
+  i lime
+  t tan
+  u fur
+  b bark
+  c cream
+  o gold
+  w white
+  r red
+  s slate
+  x stone
+  a water
+  d bark
+  f fur
+  l tan
+
+sprite forest.floor
+size 16 16
+anchor 0 0
+frame
+mmmmmmmmmmmmmmmm
+mmmmmmmmemmmmmmm
+memmmmmmmmmmmmmm
+mmmmmmmmmmmmmmmm
+mmmmmmmmmmmmmmmm
+eemmmemmmmgmmmdm
+mmmmmmmmemmmmmmm
+mmmmmmmemmmmmmmm
+mmmmmmmmmmmmmmmm
+mmmmmemmmmmmmmmm
+mmmmmmmmmmmmmmem
+ememgmmmmmmgmgmm
+mmmmmmmmmmmmmemm
+mmmmmmmmmmmmemmm
+mmmmmgmmmmmedmmm
+mmmmmmmdmmmmmmmm
+
+sprite forest.floor_leaves
+size 16 16
+anchor 0 0
+frame
+mmmfmemmmmmmmmmm
+mmmmlmmmmmmmmmmm
+mmmmemmmmmmmmmmm
+memmmmmmmmmmemmm
+mmmmmmmmemmmmmmd
+mmmmmmmmmmmmmemm
+mgmmommmmemmmmmm
+dmmmmemmmmmmmmmm
+mmgmmfmmmmmmmlmm
+mmmmmmmmmmmfmfmm
+mmemmmmmgmmmmmmm
+mmmmmmmmmmmmmmem
+mdmmmmgfmmlmmmmm
+gmmmmmmemmmmmmmm
+mmmmmemmmmemmmmm
+mmmmmmmmmmmmmmmm
+
+sprite forest.trail
+size 16 16
+anchor 0 0
+frame
+ffffffdfffffffff
+fffffffffdffffff
+ffdffffflfflffff
+ffffffffffffffff
+fffffffffffffffd
+ffffffdldfffffff
+ffffffffffffffff
+ffffffffffffffff
+fffdffffdfffffff
+fffffffdflffffff
+ffffffffffffffff
+fffffffdffffffff
+dffdfffffflfffff
+ffffffffffffffff
+ffffffffffffffff
+ffffffflffffffff
+
+sprite forest.trail_n
+size 16 16
+anchor 0 0
+frame
+ememmememmmeemmm
+lmfmelefeeeffeem
+fefeffflffffdffe
+ffffffffffffffff
+fffffffffffdffff
+fffffffffffdffff
+fdffffffffdfffff
+ffffffffffffffff
+fffffffffffffffd
+ffffffffffffffff
+ffdflfffffffffff
+ffffffffffffffff
+ffffffffffffffff
+ffflffffffffffff
+ffffdfffdfffflff
+fffffffffffdffff
+
+sprite forest.trail_s
+size 16 16
+anchor 0 0
+frame
+ffffffffffffffff
+ffffffffffffffff
+lffffffffdffffff
+ffffffffffffdflf
+ffffffffffffffff
+ffffdfffdfffffff
+fffffffflfffffff
+fffdffffdfffffff
+ffffffffdfffffff
+ffffffffffffffdf
+ffflffffffffffff
+ffflffffdfdfffff
+fffffffffffflfdf
+fffeffeefffefefe
+eeemeemmefememfm
+mmmmmmmmmemmmmem
+
+sprite forest.pine_top
+size 16 16
+anchor 0 0
+outline yes
+frame
+.......kk.......
+......kmek......
+......kmek......
+.....kieeek.....
+.....kmeeek.....
+....kmeeeeek....
+....kmemeeek....
+...kmmemeeeek...
+..kmmgmeeeeeek..
+...kkieeeeekk...
+...kmmeeeeeek...
+...kmmemeeeek...
+..kmmeemeeeeek..
+.kmmmemeeeeeeek.
+kmmgemeeeeeeeeek
+.kkkimeeeeekkkk.
+
+sprite forest.pine_bottom
+size 16 16
+anchor 0 0
+outline yes
+frame
+...kmmeeeeeek...
+..kmmeeeeeeeek..
+..kmmeeeeeeeek..
+.kmmmeeeeeeeeek.
+kmmmeeeeeeeeeeek
+mmgmeeeeeeeeeeee
+kkkkkkkubkkkkkkk
+......kubk......
+......kubk......
+......kubk......
+......kubk......
+......kubk......
+......kubk......
+.....kuubbk.....
+......kkkk......
+................
+
+sprite forest.log
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+................
+................
+................
+......kk........
+.kkkkkmgkkkkkkk.
+kttttttttttttcck
+kuuuuuuuuuuuucck
+kuuubuuubuububtk
+kuuuuuuuuuuuucck
+kbbbbbbbbbbbbcck
+.kkkkkkkkkkkkkk.
+................
+
+sprite forest.mushrooms
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+................
+................
+................
+...kkk..........
+..krrrk.........
+.krwrrrk.kkk....
+.krrrwrkkrrrk...
+..kkckkkrwrrrk..
+...kck.krrrwrk..
+...kck..kkckk...
+....k....kck....
+.........kck....
+
+sprite forest.rock
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+................
+................
+................
+................
+....kkkkkkkk....
+...kxwxxxsssk...
+..kxxxxxxxsssk..
+.kssxxxxxsssssk.
+.kssssxssmssssk.
+.kttttttttttttk.
+..kttttttttttk..
+...kkkkkkkkkk...
+
+sprite forest.fern
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+................
+................
+................
+........k.......
+.....k.kmk.k....
+....kgkkmekmk...
+...kkegkmkmekk..
+..kgkkgkkkmkkmk.
+..keggegmmemmek.
+...kkeggmmmekk..
+.....kkkekkk....
+........k.......

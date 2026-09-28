@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+
+# Record mode: raw payloads with paths, commands and content. Never commit them.
+recordings/
+tmp/
+
+# Background server (zoomies start): pid and log
+run/
+
+# Personal config (paths to your projects)
+zoomies.config.json

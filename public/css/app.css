@@ -1,0 +1,252 @@
+:root {
+  --bg: #1f1a24;
+  --panel: #2a2331;
+  --text: #f2dfb4;
+  --muted: #8a8691;
+  --needs: #f0c04a;
+  --working: #7fb24a;
+  --done: #3f78a8;
+  --ended: #54505e;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.top {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 16px 0;
+}
+h1 {
+  font-size: 18px;
+  margin: 0;
+}
+h2 {
+  font-size: 14px;
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+#status {
+  color: var(--muted);
+}
+#status[data-state="reconnecting"] {
+  color: var(--needs);
+}
+main {
+  padding: 12px 16px 16px;
+}
+#empty {
+  color: var(--muted);
+}
+code {
+  color: var(--text);
+}
+#scenes {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+#scenes[data-count="2"],
+#scenes[data-count="3"],
+#scenes[data-count="4"] {
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+}
+#scenes[data-count="5"],
+#scenes[data-count="6"],
+#scenes[data-count="7"],
+#scenes[data-count="8"],
+#scenes[data-count="9"] {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+.scene {
+  background: var(--panel);
+  border: 2px solid var(--panel);
+  min-width: 0;
+}
+.scene header {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 6px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.scene .project {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.scene .ago {
+  margin-left: auto;
+  color: var(--muted);
+}
+.badge {
+  padding: 0 6px;
+  color: var(--bg);
+  background: var(--muted);
+}
+[data-bucket="needs_you"] .badge {
+  background: var(--needs);
+}
+[data-bucket="working"] .badge {
+  background: var(--working);
+}
+[data-bucket="done"] .badge {
+  background: var(--done);
+  color: var(--text);
+}
+[data-bucket="ended"] .badge {
+  background: var(--ended);
+  color: var(--text);
+}
+.scene[data-bucket="needs_you"] {
+  animation: needs 1s steps(2, jump-none) infinite;
+}
+@keyframes needs {
+  from {
+    border-color: var(--needs);
+  }
+  to {
+    border-color: var(--panel);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene[data-bucket="needs_you"] {
+    animation: none;
+    border-color: var(--needs);
+  }
+}
+.scene canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  image-rendering: pixelated;
+}
+.scene canvas.shrink {
+  width: 100%;
+  height: auto;
+}
+.unpin {
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+#kennel {
+  margin-top: 16px;
+}
+#kennel-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.kennel-card {
+  display: grid;
+  grid-template-columns: 48px auto;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  align-items: center;
+  padding: 4px 10px 4px 4px;
+  background: var(--panel);
+  color: var(--text);
+  border: 2px solid var(--panel);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.kennel-card canvas {
+  grid-row: span 2;
+  image-rendering: pixelated;
+}
+.kennel-card:hover,
+.kennel-card:focus-visible {
+  border-color: var(--text);
+}
+.kennel-card[data-bucket="needs_you"] {
+  border-color: var(--needs);
+}
+
+.views {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+.views button,
+.zoom button {
+  background: var(--panel);
+  color: var(--text);
+  border: 2px solid var(--panel);
+  font: inherit;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+.views button[aria-pressed="true"] {
+  border-color: var(--text);
+}
+.views button:focus-visible,
+.zoom button:focus-visible {
+  border-color: var(--needs);
+}
+.world-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  min-height: 28px;
+}
+.zoom {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+#alerts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#alerts button {
+  background: var(--needs);
+  color: var(--bg);
+  border: 0;
+  font: inherit;
+  font-weight: bold;
+  padding: 2px 10px;
+  cursor: pointer;
+  animation: needs-chip 1s steps(2, jump-none) infinite;
+}
+@keyframes needs-chip {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #alerts button {
+    animation: none;
+  }
+}
+#world {
+  display: block;
+  width: 100%;
+  image-rendering: pixelated;
+  cursor: grab;
+  touch-action: none;
+  background: var(--bg);
+}
+#world:active {
+  cursor: grabbing;
+}
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 6px 0 0;
+}

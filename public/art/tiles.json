@@ -1,0 +1,1411 @@
+{
+  "version": 1,
+  "image": "tiles.png",
+  "grid": 16,
+  "palette": {
+    "ink": "#1f1a24",
+    "plum": "#4a3548",
+    "bark": "#6e4b36",
+    "fur": "#a86f45",
+    "tan": "#d9a066",
+    "cream": "#f2dfb4",
+    "white": "#fbf7ef",
+    "leaf_dark": "#2e5a3a",
+    "leaf": "#4e8a3e",
+    "grass": "#7fb24a",
+    "lime": "#b8d86b",
+    "water": "#3f78a8",
+    "red": "#c8483f",
+    "gold": "#f0c04a",
+    "stone": "#8a8691",
+    "slate": "#54505e"
+  },
+  "sprites": {
+    "agility.grass": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "agility.sand": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              16
+            ]
+          ]
+        }
+      }
+    },
+    "agility.sand_n": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              32
+            ]
+          ]
+        }
+      }
+    },
+    "agility.sand_s": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              48
+            ]
+          ]
+        }
+      }
+    },
+    "agility.fence": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              64
+            ]
+          ]
+        }
+      }
+    },
+    "agility.hurdle": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              80
+            ]
+          ]
+        }
+      }
+    },
+    "agility.hoop": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              96
+            ]
+          ]
+        }
+      }
+    },
+    "agility.tunnel_l": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              112
+            ]
+          ]
+        }
+      }
+    },
+    "agility.tunnel_r": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              128
+            ]
+          ]
+        }
+      }
+    },
+    "agility.slalom": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              144
+            ]
+          ]
+        }
+      }
+    },
+    "agility.flag": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              160
+            ]
+          ]
+        }
+      }
+    },
+    "beach.sand": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              176
+            ]
+          ]
+        }
+      }
+    },
+    "beach.sand2": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              192
+            ]
+          ]
+        }
+      }
+    },
+    "beach.water": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              208
+            ]
+          ]
+        }
+      }
+    },
+    "beach.shore": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              224
+            ]
+          ]
+        }
+      }
+    },
+    "beach.umbrella_top": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              240
+            ]
+          ]
+        }
+      }
+    },
+    "beach.umbrella_bottom": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              256
+            ]
+          ]
+        }
+      }
+    },
+    "beach.palm_top": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              272
+            ]
+          ]
+        }
+      }
+    },
+    "beach.palm_bottom": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              288
+            ]
+          ]
+        }
+      }
+    },
+    "beach.towel": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              304
+            ]
+          ]
+        }
+      }
+    },
+    "beach.bucket": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              320
+            ]
+          ]
+        }
+      }
+    },
+    "beach.castle": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              336
+            ]
+          ]
+        }
+      }
+    },
+    "forest.floor": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              352
+            ]
+          ]
+        }
+      }
+    },
+    "forest.floor_leaves": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              368
+            ]
+          ]
+        }
+      }
+    },
+    "forest.trail": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              384
+            ]
+          ]
+        }
+      }
+    },
+    "forest.trail_n": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              400
+            ]
+          ]
+        }
+      }
+    },
+    "forest.trail_s": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              416
+            ]
+          ]
+        }
+      }
+    },
+    "forest.pine_top": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              432
+            ]
+          ]
+        }
+      }
+    },
+    "forest.pine_bottom": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              448
+            ]
+          ]
+        }
+      }
+    },
+    "forest.log": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              464
+            ]
+          ]
+        }
+      }
+    },
+    "forest.mushrooms": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              480
+            ]
+          ]
+        }
+      }
+    },
+    "forest.rock": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              496
+            ]
+          ]
+        }
+      }
+    },
+    "forest.fern": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              512
+            ]
+          ]
+        }
+      }
+    },
+    "park.grass": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              528
+            ]
+          ]
+        }
+      }
+    },
+    "park.grass2": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              544
+            ]
+          ]
+        }
+      }
+    },
+    "park.flowers": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              560
+            ]
+          ]
+        }
+      }
+    },
+    "park.path": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              576
+            ]
+          ]
+        }
+      }
+    },
+    "park.path_n": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              592
+            ]
+          ]
+        }
+      }
+    },
+    "park.path_s": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              608
+            ]
+          ]
+        }
+      }
+    },
+    "park.fence": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              624
+            ]
+          ]
+        }
+      }
+    },
+    "park.bush": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              640
+            ]
+          ]
+        }
+      }
+    },
+    "park.tree_top": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              656
+            ]
+          ]
+        }
+      }
+    },
+    "park.tree_bottom": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              672
+            ]
+          ]
+        }
+      }
+    },
+    "snow.snow": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              688
+            ]
+          ]
+        }
+      }
+    },
+    "snow.snow2": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              704
+            ]
+          ]
+        }
+      }
+    },
+    "snow.trail": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              720
+            ]
+          ]
+        }
+      }
+    },
+    "snow.trail_n": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              736
+            ]
+          ]
+        }
+      }
+    },
+    "snow.trail_s": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              752
+            ]
+          ]
+        }
+      }
+    },
+    "snow.pine_top": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              768
+            ]
+          ]
+        }
+      }
+    },
+    "snow.pine_bottom": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              784
+            ]
+          ]
+        }
+      }
+    },
+    "snow.snowman": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              800
+            ]
+          ]
+        }
+      }
+    },
+    "snow.sled": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              816
+            ]
+          ]
+        }
+      }
+    },
+    "snow.rock": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              832
+            ]
+          ]
+        }
+      }
+    },
+    "square.paving": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              848
+            ]
+          ]
+        }
+      }
+    },
+    "square.paving2": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              864
+            ]
+          ]
+        }
+      }
+    },
+    "square.grass": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              880
+            ]
+          ]
+        }
+      }
+    },
+    "square.grass_n": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              896
+            ]
+          ]
+        }
+      }
+    },
+    "square.grass_s": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              912
+            ]
+          ]
+        }
+      }
+    },
+    "square.fountain_top": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              928
+            ]
+          ]
+        }
+      }
+    },
+    "square.fountain_bottom": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              944
+            ]
+          ]
+        }
+      }
+    },
+    "square.bench_l": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              960
+            ]
+          ]
+        }
+      }
+    },
+    "square.bench_r": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              976
+            ]
+          ]
+        }
+      }
+    },
+    "square.lamp_top": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              992
+            ]
+          ]
+        }
+      }
+    },
+    "square.lamp_bottom": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              1008
+            ]
+          ]
+        }
+      }
+    },
+    "square.planter": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              1024
+            ]
+          ]
+        }
+      }
+    },
+    "square.bin": {
+      "size": [
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "anims": {
+        "default": {
+          "fps": 1,
+          "frames": [
+            [
+              0,
+              1040
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

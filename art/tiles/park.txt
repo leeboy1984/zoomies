@@ -1,0 +1,230 @@
+# Park tileset. Opaque ground; objects with transparency and an outline.
+# Light from the top left.
+legend
+  . transparent
+  k ink
+  g grass
+  m leaf
+  e leaf_dark
+  i lime
+  t tan
+  u fur
+  b bark
+  c cream
+  y gold
+  w white
+  r red
+
+sprite park.grass
+size 16 16
+anchor 0 0
+frame
+iggggggggggggigm
+gggggggggggggggg
+ggggmggggggggggg
+ggggggmgmggggggg
+gggggggggggggggg
+gggggggggggggggg
+ggggggggggggiggg
+ggggggggmggggggi
+gggggggggggggggg
+gggggggggggggggg
+gggmgggggggggggg
+gggggggggggggggg
+gggggggggggggggm
+ggggggggggggmggg
+mggggggigggggggm
+gggggggggggggggg
+
+sprite park.grass2
+size 16 16
+anchor 0 0
+frame
+gggggggggggggggg
+ggggggmggggmmmgg
+gggggggmgggggmgg
+ggmgiggggggggggg
+giggggggggiigggg
+gggggggggimmmggg
+gggggggggggggggg
+gigmgggggggggggg
+gggggggggggggggg
+gggggggggggggggg
+ggggiigggggggggg
+ggggmmmggggggggg
+gigggggggggggggg
+ggmggggggigggggg
+gggggggggggggggg
+gggggggggggggggg
+
+sprite park.flowers
+size 16 16
+anchor 0 0
+frame
+ggmgggggggggmggg
+gggggggggggggggg
+gggggggggggggggg
+gggggggggggwgggg
+gggygggmgggmmgig
+ggmmgggggggggggg
+gggggggmgggggggg
+gggggggggggggggg
+iggggggggggggggm
+gigggggrgggggggg
+gggggggmgggggggg
+gggggggggggggggg
+gggggggggggggygi
+ggwggggggggggmgg
+ggmggggggggggggg
+gggggggggggmgggm
+
+sprite park.path
+size 16 16
+anchor 0 0
+frame
+cttttttttttttttt
+tttttttutttttttt
+tttttctttttttttt
+tttttutttttttttt
+ttttcttttttttttt
+tttttttttttttttt
+utttttcttttttttt
+tttutttttttttttt
+tttttttttttttutt
+tttttttttttttttt
+tttttttttttttttt
+ttttttttuttttttt
+tttttctutttttttt
+tttttttttttttttt
+utttcttttttttttt
+tttttttttttutttt
+
+sprite park.path_n
+size 16 16
+anchor 0 0
+frame
+gggggggggmmggmgg
+mggmgmgmmttmgtmm
+ummtmtmtttttmttt
+tttttutttttttttt
+tttttttttttttttt
+ttttttttttttttut
+ttttttttttttttut
+ttttttcttttttttt
+tttttttttttttttt
+ttttttttttttttut
+tttttttttttttttt
+tttttttttttttttt
+tutttttttttttttt
+tttttttttttttttt
+ctttttttttctttut
+tttttutttctttttt
+
+sprite park.path_s
+size 16 16
+anchor 0 0
+frame
+tttttttttutttttt
+tttttttttttttttt
+ttttuttttttttttt
+tttttttttttttttt
+tttttutttttttctt
+tttttttttttttttt
+ttuttttttttttttt
+ttttuutttttttttt
+uttttttttttttttt
+ttttttttuttttttt
+tttttttttttttctt
+ttttttttcttttctt
+tttttttttttttttt
+ttttmmttttmttmtt
+mttmggmmmmgtmgtt
+gmmggggggggmggmm
+
+sprite park.fence
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+..kkk.....kkk...
+.ktuuk...ktuuk..
+.ktubk...ktubk..
+kktubkkkkktubkkk
+tttubttttttubttt
+uutubuuuuutubuuu
+kktubkkkkktubkkk
+.ktubk...ktubk..
+kktubkkkkktubkkk
+tttubttttttubttt
+uutubuuuuutubuuu
+kktubkkkkktubkkk
+.ktubk...ktubk..
+..kkk.....kkk...
+
+sprite park.bush
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+................
+....kkkkkkkk....
+..kkggigmmmmkk..
+.kgggigggmmmmmk.
+.kggggggggmmmmk.
+kmgggggggmrmmmmk
+kmmgggggmmmmmmmk
+kmmmrmmmmemmmmmk
+.kmmmeeeeeeeeek.
+.kmmeeeeeeeeeek.
+..kkmeeeeeeekk..
+....kkkkkkkk....
+
+sprite park.tree_top
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+.....kkkkkk.....
+....kmmmeeek....
+...kmimmmmeek...
+..kmimmmmmmeek..
+.kmmmmmmmmmeeek.
+.kmimmmmmmmmeek.
+kmmmmmmmmmmmeeek
+kmmmmmmmmmmmeeek
+kmmmmmmmmmmmeeek
+kmmmmmmmmmmmeeek
+kemmmmmmmmmeeeek
+kemmmmmmmmmeeeek
+keemmmmmmmeeeeek
+keeeemmmeeeeeeek
+keeeeeeeeeeeeeek
+
+sprite park.tree_bottom
+size 16 16
+anchor 0 0
+outline yes
+frame
+.keeeeeeeeeeeek.
+.keeeeeeeeeeeek.
+..keeeeeeeeeek..
+...keeeeeeeek...
+....keuubeek....
+.....kuubkk.....
+.....kuubk......
+.....kuubk......
+.....kuubk......
+.....kuubbk.....
+.....kuubbk.....
+.....kuubbk.....
+.....kuubbk.....
+....kuuubbbk....
+.....kkkkkk.....
+................

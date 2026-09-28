@@ -1,0 +1,259 @@
+# Agility tileset: sand, white fence and obstacles. Light from the top left.
+legend
+  . transparent
+  k ink
+  g grass
+  m leaf
+  e leaf_dark
+  i lime
+  t tan
+  u fur
+  b bark
+  c cream
+  o gold
+  w white
+  r red
+  s slate
+  x stone
+  a water
+  d bark
+  f fur
+  l tan
+
+sprite agility.grass
+size 16 16
+anchor 0 0
+frame
+ggggggmggggggggg
+gggggggggmgggggg
+ggmggggggggigggg
+gggggggggggggggg
+gggggggggggggggm
+ggggggiimggggggg
+gggggggggggggggg
+gggggggggggggggg
+gggmggggiggggggg
+gggggggmgigggggg
+gggggggggggggggg
+gggggggmgggggggg
+mggmggggggiggggg
+gggggggggggggggg
+gggggggggggggggg
+gggggggggggggggg
+
+sprite agility.sand
+size 16 16
+anchor 0 0
+frame
+llllllllllclllll
+llllllllclllllll
+llllllllflllllll
+llllllllllllllfl
+clllllllllllllll
+llllllllllllllll
+lllcllllllllllll
+llllllllllllllll
+lllllllllllllfll
+llllllflllllllll
+lllllllllllllfll
+llfllllllllllllc
+llllllllllllllll
+llllllclllllllll
+llllllllllllllll
+llclllllclllllll
+
+sprite agility.sand_n
+size 16 16
+anchor 0 0
+frame
+ggggggggmgmggggg
+gmmmgmmglmlgmmmm
+mlllmllmlllmllll
+llllllllllllllll
+llllllllllllllll
+llllllllllllllll
+llllllllllllllll
+fllllllclflllcll
+lllllllllllllcll
+clllfllllllllllc
+lllllllllcllllll
+llllllllllllllll
+llllllllllllllll
+llllllllllllllll
+llllllllllllllfl
+lllllllllllcllll
+
+sprite agility.sand_s
+size 16 16
+anchor 0 0
+frame
+llllllllllllllll
+llllllllllllllll
+llllllllllllllll
+lllllcllclllllll
+llllllllllllllll
+lllllllfllflllll
+lllllllfcllflllf
+llllllllllllllll
+lllllllllfllllll
+llllllllllllllll
+llllllllllllllcl
+llllllllllllllll
+llllllllllllllll
+lllmllmmlmlmmlll
+lmmgmlgglgmggmll
+mggggmggmgggggmm
+
+sprite agility.fence
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+..kkk.....kkk...
+.kwwwk...kwwwk..
+.kwwxk...kwwxk..
+kkwwxkkkkkwwxkkk
+wwwwxwwwwwwwxwww
+xxwwxxxxxxwwxxxx
+kkwwxkkkkkwwxkkk
+.kwwxk...kwwxk..
+kkwwxkkkkkwwxkkk
+wwwwxwwwwwwwxwww
+xxwwxxxxxxwwxxxx
+kkwwxkkkkkwwxkkk
+.kwwxk...kwwxk..
+..kkk.....kkk...
+
+sprite agility.hurdle
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+..k..........k..
+.krk........krk.
+.kwk........kwk.
+.kwkkkkkkkkkkwk.
+.kwwrwrwrwrwrwk.
+.kwwrwrwrwrwrwk.
+.kwkkkkkkkkkkwk.
+.kwk........kwk.
+.kwk........kwk.
+.kwk........kwk.
+.kwk........kwk.
+kxxxk......kxxxk
+.kkk........kkk.
+
+sprite agility.hoop
+size 16 16
+anchor 0 0
+outline yes
+frame
+......kkkk......
+....kkroorkk....
+...krroorrook...
+...krokkkkork...
+..krok....krok..
+..kook....kook..
+..kok......krk..
+..krrk....krrk..
+..krok....krok..
+...korkkkkrok...
+...krroorrook...
+....kkowwokk....
+......kwwk......
+.....kkwwkk.....
+....kxxxxxxk....
+.....kkkkkk.....
+
+sprite agility.tunnel_l
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+.kkkkkkkkkkkkkkk
+ksaaasaaasaaasaa
+kswwwswwwswwwsww
+ksaaasaaasaaasaa
+ksaaasaaasaaasaa
+ksaaasaaasaaasaa
+ksaaasaaasaaasaa
+ksaaasaaasaaasaa
+ksaaasaaasaaasaa
+ksaaasaaasaaasaa
+ksaaasaaasaaasaa
+.kkkkkkkkkkkkkkk
+
+sprite agility.tunnel_r
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+kkkkkkkkkkkkkkk.
+asaaasaaasaaasak
+wswwwswwwswwwswk
+asaaasaaasaaakk.
+asaaasaaasaaakk.
+asaaasaaasaaakk.
+asaaasaaasaaakk.
+asaaasaaasaaakk.
+asaaasaaasaaakk.
+asaaasaaasaaakk.
+asaaasaaasaaasak
+kkkkkkkkkkkkkkk.
+
+sprite agility.slalom
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+...k....k....k..
+..kwk..kwk..kwk.
+..krk..krk..krk.
+..krk..krk..krk.
+..kwk..kwk..kwk.
+..kwk..kwk..kwk.
+..krk..krk..krk.
+..krk..krk..krk.
+..kwk..kwk..kwk.
+..kwk..kwk..kwk.
+..krk..krk..krk.
+..krk..krk..krk.
+.kxwxkkxwxkkxwxk
+..kkk..kkk..kkk.
+
+sprite agility.flag
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+....kk.k........
+...kwwkwk.......
+...kwkwkwk.k....
+...kwwkwkwkwk...
+...kwkwkwkwkwk..
+...kwwkwkwkwk...
+...kwkwkwk.k....
+...kwkk.k.......
+...kwk..........
+...kwk..........
+...kwk..........
+...kwk..........
+...kwk..........
+..kxxxk.........
+...kkk..........

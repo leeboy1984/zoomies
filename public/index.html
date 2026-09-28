@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dog Park</title>
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body>
+    <header class="top">
+      <h1>Dog Park</h1>
+      <span id="status" data-state="connecting">connecting</span>
+      <nav class="views" aria-label="View">
+        <button data-view="world" type="button">Mega park</button>
+        <button data-view="scenes" type="button">Scenes</button>
+      </nav>
+    </header>
+    <main>
+      <p id="empty" hidden>
+        No sessions yet. Start Claude Code in a project with the zoomies hooks, or try
+        <code>node bin/zoomies.mjs replay examples/demo.jsonl</code>.
+      </p>
+      <section id="world-view" hidden>
+        <div class="world-bar">
+          <div id="alerts" aria-live="polite"></div>
+          <div class="zoom">
+            <button id="zoom-out" type="button" title="Zoom out">−</button>
+            <button id="zoom-fit" type="button" title="See the whole park">⤢</button>
+            <button id="zoom-in" type="button" title="Zoom in">+</button>
+          </div>
+        </div>
+        <canvas id="world" aria-label="Mega park with every session"></canvas>
+        <p class="hint">Scroll or +/− to zoom, drag to move around, click a trainer to jump to their plot. Trainers at the bar are idle sessions: click one to send it back to its plot.</p>
+      </section>
+      <section id="scenes" aria-live="polite"></section>
+      <section id="kennel" hidden>
+        <h2>Kennel</h2>
+        <div id="kennel-list"></div>
+      </section>
+    </main>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

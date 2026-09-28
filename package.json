@@ -1,0 +1,40 @@
+{
+  "name": "zoomies",
+  "version": "0.0.1",
+  "description": "Dog Park: watch what your coding agents (Claude Code, Codex, GitHub Copilot CLI) are doing, in pixel art",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "zoomies": "bin/zoomies.mjs",
+    "zoomies-hook": "bin/zoomies-hook.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.json && vitest run",
+    "start": "node bin/zoomies.mjs start",
+    "stop": "node bin/zoomies.mjs stop",
+    "restart": "node bin/zoomies.mjs restart",
+    "status": "node bin/zoomies.mjs status",
+    "serve": "node bin/zoomies.mjs serve",
+    "demo": "node bin/zoomies.mjs replay examples/demo.jsonl --speed 2",
+    "record": "node bin/zoomies.mjs serve --record",
+    "art:build": "node bin/zoomies.mjs art build",
+    "art:check": "node bin/zoomies.mjs art check",
+    "screenshots": "node scripts/screenshots/run.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0"
+  },
+  "dependencies": {
+    "ws": "^8.22.0"
+  }
+}

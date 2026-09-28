@@ -1,0 +1,13 @@
+{
+  "$comment": "Copy this file to zoomies.config.json (git-ignored) and adjust the paths.",
+  "scenarios": {
+    "~/projects/blog": "forest",
+    "~/projects/api": "park",
+    "~/projects/tasks": "agility"
+  },
+  "agilityForTasks": true,
+  "companions": {
+    "~/projects/blog": { "breed": "pug", "coat": "black" },
+    "~/projects/api": "beagle"
+  }
+}

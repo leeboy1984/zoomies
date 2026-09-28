@@ -1,0 +1,119 @@
+{
+  "name": "forest",
+  "tileSize": 16,
+  "tileset": "forest",
+  "width": 24,
+  "height": 14,
+  "legend": {
+    "g": "floor",
+    "l": "floor_leaves",
+    "p": "trail",
+    "n": "trail_n",
+    "s": "trail_s",
+    "T": "pine_top",
+    "R": "pine_bottom",
+    "L": "log",
+    "M": "mushrooms",
+    "O": "rock",
+    "F": "fern",
+    ".": null
+  },
+  "layers": [
+    {
+      "name": "ground",
+      "rows": [
+        "ggglglgggggggggglgggglgg",
+        "glglglgggglgggllggglggll",
+        "gglglgggglglgggglgglgggg",
+        "gllggggglggggggglggggggg",
+        "ggllggggggllggglgggllggg",
+        "gglgggggggglglgllgglglgg",
+        "ggggllggllllggggglgglggl",
+        "ggggggggggggggggglggglgg",
+        "nnnnnnnnnnnnnnnnnnnnnnnn",
+        "pppppppppppppppppppppppp",
+        "ssssssssssssssssssssssss",
+        "gglggggllgggggggglggglgg",
+        "lggllgggllgllglgggglgggg",
+        "gglggglgggggglgggggglglg"
+      ]
+    },
+    {
+      "name": "objects",
+      "rows": [
+        "T..T.....T...T.....T..T.",
+        "R..R..T..R...R..T..R..R.",
+        "......R.........R.......",
+        ".T.........L........T...",
+        ".R.............T....R..T",
+        "....T..........R.......R",
+        "....R.F...O.......M.....",
+        ".....................F..",
+        "........................",
+        "........................",
+        "T.......................",
+        "R.......T.............T.",
+        "..M.....R....O...F....R.",
+        "........................"
+      ]
+    }
+  ],
+  "spots": {
+    "trainer": [
+      9,
+      9
+    ],
+    "companion": [
+      11,
+      9
+    ],
+    "bed": [
+      5,
+      11
+    ],
+    "puppies": [
+      [
+        14,
+        11
+      ],
+      [
+        16,
+        11
+      ],
+      [
+        19,
+        11
+      ],
+      [
+        15,
+        13
+      ],
+      [
+        20,
+        13
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        13,
+        6
+      ],
+      [
+        16,
+        6
+      ]
+    ],
+    "props": {
+      "ball": [
+        13,
+        9
+      ],
+      "bone": [
+        7,
+        12
+      ]
+    }
+  }
+}

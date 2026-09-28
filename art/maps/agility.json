@@ -1,0 +1,146 @@
+{
+  "name": "agility",
+  "tileSize": 16,
+  "tileset": "agility",
+  "width": 24,
+  "height": 14,
+  "legend": {
+    "g": "grass",
+    "a": "sand",
+    "n": "sand_n",
+    "s": "sand_s",
+    "F": "fence",
+    "H": "hurdle",
+    "O": "hoop",
+    "L": "tunnel_l",
+    "R": "tunnel_r",
+    "S": "slalom",
+    "G": "flag",
+    "B": "flag",
+    ".": null
+  },
+  "layers": [
+    {
+      "name": "ground",
+      "rows": [
+        "gggggggggggggggggggggggg",
+        "gggggggggggggggggggggggg",
+        "gggggggggggggggggggggggg",
+        "nnnnnnnnnnnnnnnnnnnnnnnn",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "ssssssssssssssssssssssss"
+      ]
+    },
+    {
+      "name": "objects",
+      "rows": [
+        "FFFFFFFFFFFFFFFFFFFFFFFF",
+        "..B......B.....B....B...",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        ".......................G",
+        "....H...O...LR...S...H..",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................"
+      ]
+    }
+  ],
+  "spots": {
+    "trainer": [
+      7,
+      11
+    ],
+    "companion": [
+      2,
+      7
+    ],
+    "bed": [
+      21,
+      11
+    ],
+    "puppies": [
+      [
+        10,
+        11
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        14,
+        11
+      ],
+      [
+        16,
+        11
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        13,
+        12
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        17,
+        12
+      ]
+    ],
+    "props": {
+      "ball": [
+        3,
+        11
+      ],
+      "bone": [
+        19,
+        11
+      ]
+    },
+    "obstacles": [
+      [
+        4,
+        7
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        17,
+        7
+      ],
+      [
+        21,
+        7
+      ],
+      [
+        23,
+        7
+      ]
+    ]
+  }
+}

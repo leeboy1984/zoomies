@@ -1,0 +1,233 @@
+# Snow tileset. Light from the top left.
+legend
+  . transparent
+  k ink
+  g grass
+  m leaf
+  e leaf_dark
+  i lime
+  l tan
+  u fur
+  b bark
+  c cream
+  o gold
+  w white
+  r red
+  s slate
+  x stone
+  a water
+
+sprite snow.snow
+size 16 16
+anchor 0 0
+frame
+wwwwwwcwwwwwwwww
+wwwwwwwwwcwwwwww
+wwxwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwx
+wwwwwwwwcwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwcwwwwcwwwwwww
+wwwwwwwxwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwcwwwwwwww
+xwwxwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+
+sprite snow.snow2
+size 16 16
+anchor 0 0
+frame
+wwwwwwwwwwwwwwwx
+wwwwwxwwwwwcwwww
+wwwwwwwwwwxwwwww
+wwwxwwwwwwxwwwww
+wwwxwwwwwwwwwcww
+wwwwwwwwwwwwxwww
+wwwwwxwwwwwwxwww
+wwcwwxwwwwwwwwww
+wwwwwwwwwwxwwwwx
+wwwxwwwwwwxwwcww
+wwwxwwwwwwwwwwwc
+wwwwwwwwwwwwxwww
+wwwwwxwwwwwcxwww
+wxwwwxwwwwwwwwww
+wwwwwwxwwwwwwwww
+wwwwwwwwwwwwwwww
+
+sprite snow.trail
+size 16 16
+anchor 0 0
+frame
+ccccccccccxccccc
+cccwccccxccccccc
+ccccccccxccccccc
+cccccccccccccclc
+xccccccccccccccc
+cccccccccccccccc
+cccxcccccccccccw
+cccccccccccccccc
+ccccccccccccclcc
+ccccccwccccccccc
+cccccccccccccxcc
+cclcccwccccccccx
+cccccccccccccccc
+ccccccxccccccccc
+cccccccccccccccc
+ccxcccccxccccccc
+
+sprite snow.trail_n
+size 16 16
+anchor 0 0
+frame
+wwwwwwxwwwxwwwww
+wxxxxxcwxxcwwxxx
+xccccccxxccxxccc
+cccccccccccccclc
+xccccccccccccccc
+cccccccccccccccc
+cccxcccccccccccw
+cccccccccccccccc
+ccccccccccccclcc
+ccccccwccccccccc
+cccccccccccccxcc
+cclcccwccccccccx
+cccccccccccccccc
+ccccccxccccccccc
+cccccccccccccccc
+ccxcccccxccccccc
+
+sprite snow.trail_s
+size 16 16
+anchor 0 0
+frame
+ccccccccccxccccc
+cccwccccxccccccc
+ccccccccxccccccc
+cccccccccccccclc
+xccccccccccccccc
+cccccccccccccccc
+cccxcccccccccccw
+cccccccccccccccc
+ccccccccccccclcc
+ccccccwccccccccc
+cccccccccccccxcc
+cclcccwccccccccx
+cccccccccccccccc
+xxccxcxccccccccc
+wwxxwcwccxxcxcxx
+wwwwwxwxxwwxwxww
+
+sprite snow.pine_top
+size 16 16
+anchor 0 0
+outline yes
+frame
+.......kk.......
+......kmwk......
+......kwwwk.....
+.....kmwewk.....
+.....kweeewk....
+....kmeeeeek....
+....kwemweek....
+...kmmewwweek...
+..kmmewwewweek..
+...kkmweeewkk...
+...kmweeeeewk...
+...kwmemweeewk..
+..kwmeewwweeek..
+.kmmmewwewweeek.
+kmmmemweeeweeeek
+.kkkkweeeeewkkk.
+
+sprite snow.pine_bottom
+size 16 16
+anchor 0 0
+outline yes
+frame
+...kwmeeeeeewk..
+..kmmeeeeeeeek..
+..kwmeeeeeeeewk.
+.kwmmeeeeeeeeek.
+kmmmeeeeeeeeeeek
+mmmmeeeeeeeeeeee
+kkkkkkkubkkkkkkk
+......kubk......
+......kubk......
+......kubk......
+......kubk......
+......kubk......
+......kubk......
+......kubk......
+.......kk.......
+................
+
+sprite snow.snowman
+size 16 16
+anchor 0 0
+outline yes
+frame
+.....kssssk.....
+.....kssssk.....
+....kssssssk....
+.....kkkkkk.....
+......kwwk......
+.....kwwkwk.....
+....kwwwwllk....
+....kwwwwwwk....
+....krrrrrrk....
+....krwwwxxk....
+....kwwwwxxk....
+...kwwwkwxxxk...
+...kwwwwwxxxk...
+....kwwkwxxk....
+....kwwwwxxk....
+.....kkwwkk.....
+
+sprite snow.sled
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+................
+................
+................
+................
+...kkkkkkkkkk...
+..kooooooooookk.
+..krrrrrrrrrrksk
+..kskkkkkkkksksk
+.kssssssssssssk.
+..kkkkkkkkkkkk..
+................
+................
+
+sprite snow.rock
+size 16 16
+anchor 0 0
+outline yes
+frame
+................
+................
+................
+................
+................
+................
+................
+................
+....kkkkkkkk....
+...kwwwwwwwsk...
+..kxxxxxxxsssk..
+.kssxxxxxsssssk.
+.kssssxsssssssk.
+.kssssssssssssk.
+..kssssssssssk..
+...kkkkkkkkkk...

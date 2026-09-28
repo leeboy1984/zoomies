@@ -1,0 +1,14 @@
+# Git hooks (optional): `npx lefthook install` once, then they run on their own.
+# Quick checks before each commit, the full suite before each push.
+pre-commit:
+  parallel: true
+  commands:
+    typecheck:
+      run: npm run -s typecheck
+    art:
+      glob: "{art/**,public/art/**}"
+      run: npm run -s build && npm run -s art:check
+pre-push:
+  commands:
+    test:
+      run: npm test
