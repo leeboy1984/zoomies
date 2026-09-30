@@ -46,15 +46,14 @@ function setView(next) {
   layout();
 }
 
-// Full screen: the mega park edge to edge, with no header, zoom or hints.
-// The button or F toggle it (Esc leaves it); ?fullscreen=1 starts in it, for a
-// kiosk or TV (browsers only allow the real full screen after a click, so it
-// fills the window).
+// Full screen: the current view (mega park or scenes) fills the screen, with
+// no header, zoom or hints. The button or F toggle it (Esc leaves it);
+// ?fullscreen=1 starts in it, for a kiosk or TV (browsers only allow the real
+// full screen after a click, so it fills the window).
 let fullscreen = false;
 function setFullscreen(on) {
   if (on === fullscreen) return;
   fullscreen = on;
-  if (on) setView("world");
   document.body.classList.toggle("fullscreen", on);
   if (on && !document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(() => {});
   if (!on && document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
@@ -178,11 +177,49 @@ function updateTitle() {
   document.title = needs ? `(${needs}) You're needed! · Dog Park` : "Dog Park";
 }
 
+/** Scene header height (px), measured once a scene exists. */
+const SCENE_HEADER = 34;
+const GAP = 12;
+
+/**
+ * Full screen scenes: the number of columns that makes them biggest in the
+ * space left by the kennel, and the scale that fits each one in its cell.
+ */
+function fullscreenGrid(count, native) {
+  const kennelHeight = $kennel.hidden ? 0 : $kennel.offsetHeight + 16;
+  const width = window.innerWidth - 16;
+  const height = window.innerHeight - 16 - kennelHeight;
+  let best = { cols: 1, scale: 0 };
+  for (let cols = 1; cols <= count; cols++) {
+    const rows = Math.ceil(count / cols);
+    const cellW = (width - GAP * (cols - 1)) / cols - 4;
+    const cellH = (height - GAP * (rows - 1)) / rows - SCENE_HEADER - 4;
+    const scale = Math.min(cellW / native.w, cellH / native.h);
+    if (scale > best.scale) best = { cols, scale };
+  }
+  return best;
+}
+
 function resize() {
+  const first = views.values().next().value;
+  const grid =
+    fullscreen && first
+      ? fullscreenGrid(views.size, { w: first.scene.map.width * first.scene.map.tileSize, h: first.scene.map.height * first.scene.map.tileSize })
+      : null;
+  $scenes.style.gridTemplateColumns = grid ? `repeat(${grid.cols}, 1fr)` : "";
   for (const v of views.values()) {
     const map = v.scene.map;
     const native = map.width * map.tileSize;
     const width = v.el.clientWidth - 4;
+    if (grid) {
+      const s = Math.max(0.5, grid.scale);
+      // Drawn at a whole scale, shown at the size that fits.
+      v.scene.setScale(Math.max(2, Math.floor(s)));
+      v.scene.canvas.classList.remove("shrink");
+      v.scene.canvas.style.width = `${Math.floor(native * s)}px`;
+      continue;
+    }
+    v.scene.canvas.style.width = "";
     // Integer scale if it fits at ×2 or more; otherwise it is drawn at ×2 and
     // the browser shrinks it to the available width (still crisp, but not an exact multiple).
     const fit = Math.floor(width / native);

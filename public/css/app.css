@@ -246,18 +246,13 @@ code {
   cursor: grabbing;
 }
 /* Full screen: only the park, edge to edge. */
-body.fullscreen {
-  overflow: hidden;
-}
 body.fullscreen .top,
 body.fullscreen .world-bar .zoom,
-body.fullscreen .hint,
-body.fullscreen #kennel,
-body.fullscreen #scenes {
+body.fullscreen .hint {
   display: none;
 }
 body.fullscreen main {
-  padding: 0;
+  padding: 8px;
 }
 body.fullscreen .world-bar {
   /* Only the "needs you" alerts stay, floating over the park. */

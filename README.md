@@ -152,10 +152,14 @@ central avenue.
   no free table, they stand at the counter. Clicking a trainer at the bar sends the session back to its plot.
 - **Controls**: scroll or +/− to zoom, drag to move around and ⤢ to see
   everything. Clicking a trainer takes you to their plot.
-- **Full screen**: ⛶ or the F key shows only the park, edge to edge and as
-  big as the screen allows, with the lawn going on around it instead of black
-  bars. Zoom and drag still work; F or Esc leaves it. For a spare monitor or a
-  TV, open `http://127.0.0.1:3737/?fullscreen=1`: it starts that way, filling
+- **Full screen**: the **⛶ Full screen** button next to Mega park / Scenes (or
+  the F key) fills the screen with the view you are in, without the header,
+  zoom buttons or hints. The mega park shows edge to edge and as big as the
+  screen allows, with the lawn going on around it instead of black bars (zoom
+  and drag still work); the scenes grow to fit the screen, kennel included.
+  F or Esc leaves it. For a spare monitor or a
+  TV, open `http://127.0.0.1:3737/?fullscreen=1` (add `&view=scenes` for
+  the scenes): it starts that way, filling
   the window (browsers only allow the real full screen after a click, so press
   F or F11 once).
 - **Alerts**: an alert shows up at the top for every session that needs you;
