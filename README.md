@@ -35,6 +35,16 @@ neon sign, while the dog naps beside the chair.
 
 ![Trainers ordering and drinking at the bar terrace, with their dogs asleep](docs/img/bar.png)
 
+**Full screen.** ⛶ or F turns a spare monitor or a TV into the park: the whole
+mega park edge to edge, with the lawn going on around it.
+
+![The mega park in full screen on a 1920×1080 screen, with the lawn around it](docs/img/fullscreen.png)
+
+The scenes view goes full screen too, laid out to make every scene as big as
+possible.
+
+![Four scenes in full screen as a 2×2 grid, with the kennel below](docs/img/fullscreen-scenes.png)
+
 ## Status
 
 Works end to end. One caveat: **the field names come from the official hooks

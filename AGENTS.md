@@ -86,8 +86,9 @@ changes only need a page reload.
   state name is also an animation name in the atlas).
 - Add or update tests with every behaviour change. UI movement is tested by
   stepping actors in `test/ui-model.test.ts` with a fixed random function.
-- When a visual change affects what the README shows, regenerate the
-  screenshots.
+- A new visible feature gets its own README screenshot, and a visual change
+  to something already shown regenerates the images it affects, both in the
+  same branch, before the pull request (skill `readme-screenshots`).
 
 ## Verifying a change
 
@@ -100,4 +101,5 @@ changes only need a page reload.
 ## Project skills
 
 `.claude/skills/` has step-by-step loops for dog and trainer sprites
-(`dog-sprite`), tiles and maps (`park-tile`) and props (`prop-sprite`).
+(`dog-sprite`), tiles and maps (`park-tile`), props (`prop-sprite`) and the
+README screenshots (`readme-screenshots`).
