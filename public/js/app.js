@@ -46,6 +46,21 @@ function setView(next) {
   layout();
 }
 
+// Full screen: the mega park edge to edge, with no header, zoom or hints.
+// The button or F toggle it (Esc leaves it); ?fullscreen=1 starts in it, for a
+// kiosk or TV (browsers only allow the real full screen after a click, so it
+// fills the window).
+let fullscreen = false;
+function setFullscreen(on) {
+  if (on === fullscreen) return;
+  fullscreen = on;
+  if (on) setView("world");
+  document.body.classList.toggle("fullscreen", on);
+  if (on && !document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(() => {});
+  if (!on && document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+  world?.setFill(on);
+}
+
 function ago(ms) {
   const s = Math.max(0, Math.round(ms / 1000));
   if (s < 60) return `${s} s ago`;
@@ -182,9 +197,13 @@ function frame(t) {
   last = t;
   const now = Date.now();
   if (view === "world" && world) {
-    const top = $worldCanvas.getBoundingClientRect().top;
-    const width = $worldCanvas.parentElement.clientWidth;
-    world.resize(width, Math.max(320, Math.floor(window.innerHeight - top - 40)));
+    if (fullscreen) {
+      world.resize(window.innerWidth, window.innerHeight);
+    } else {
+      const top = $worldCanvas.getBoundingClientRect().top;
+      const width = $worldCanvas.parentElement.clientWidth;
+      world.resize(width, Math.max(320, Math.floor(window.innerHeight - top - 40)));
+    }
     world.draw(now, dt);
     requestAnimationFrame(frame);
     return;
@@ -223,7 +242,18 @@ async function main() {
   document.getElementById("zoom-out").addEventListener("click", () => world.zoomAt(-1, $worldCanvas.width / 2, $worldCanvas.height / 2));
   document.getElementById("zoom-fit").addEventListener("click", () => world.fit());
   for (const b of document.querySelectorAll(".views button")) b.addEventListener("click", () => setView(b.dataset.view));
+  document.getElementById("fullscreen").addEventListener("click", () => setFullscreen(true));
+  // Esc in the browser's full screen leaves it: leave ours too.
+  document.addEventListener("fullscreenchange", () => {
+    if (!document.fullscreenElement) setFullscreen(false);
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.ctrlKey || e.metaKey || e.altKey || e.target instanceof HTMLInputElement) return;
+    if (e.key === "f" || e.key === "F") setFullscreen(!fullscreen);
+    else if (e.key === "Escape") setFullscreen(false);
+  });
   setView(view);
+  if (params.get("fullscreen") === "1") setFullscreen(true);
 
   connect({
     onSnapshot: (list) => {
