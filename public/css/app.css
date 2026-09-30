@@ -245,6 +245,42 @@ code {
 #world:active {
   cursor: grabbing;
 }
+/* Full screen: only the park, edge to edge. */
+body.fullscreen .top,
+body.fullscreen .world-bar .zoom,
+body.fullscreen .hint {
+  display: none;
+}
+body.fullscreen main {
+  padding: 8px;
+}
+body.fullscreen .world-bar {
+  /* Only the "needs you" alerts stay, floating over the park. */
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  margin: 0;
+  min-height: 0;
+  z-index: 1;
+}
+body.fullscreen #world-view {
+  position: fixed;
+  inset: 0;
+}
+body.fullscreen #world {
+  width: 100vw;
+  height: 100vh;
+}
+body.fullscreen #empty {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 1;
+  margin: 0;
+  padding: 6px 12px;
+  background: rgba(31, 26, 36, 0.85);
+}
 .hint {
   color: var(--muted);
   font-size: 12px;

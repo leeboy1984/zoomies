@@ -82,6 +82,10 @@ export class World {
     this.camX = 0; // top-left corner of the view, in native px
     this.camY = 0;
     this.fitted = false;
+    /** Full screen: the whole park as big as the screen allows, even at a fractional scale. */
+    this.fill = false;
+    /** The camera still shows the fitted view (no zoom or drag since), so it refits on resize. */
+    this.autoFit = false;
     this.sessions = [];
     this.plots = new Map();
     this.kennel = [];
@@ -89,6 +93,7 @@ export class World {
     this.puppySlots = new Map(); // sessionId → Map(puppyId → slot)
     this.hits = [];
     this.bg = this.renderBackground();
+    this.lawn = this.renderLawn();
     this.bindInput();
   }
 
@@ -111,6 +116,23 @@ export class World {
       ctx.restore();
     }
     return bg;
+  }
+
+  /**
+   * Full screen: the park rarely has the screen's shape, so instead of bars
+   * the lawn goes on around it (a 4×4-tile patch of grass, repeated).
+   */
+  renderLawn() {
+    const lawn = document.createElement("canvas");
+    lawn.width = 4 * T;
+    lawn.height = 4 * T;
+    const ctx = lawn.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
+    const rows = ["ghgg", "gggf", "hggg", "ggfh"];
+    rows.forEach((row, y) =>
+      [...row].forEach((c, x) => this.sprites.draw(ctx, `park.${{ g: "grass", h: "grass2", f: "flowers" }[c]}`, "default", 0, x * T, y * T)),
+    );
+    return lawn;
   }
 
   // ------------------------------------------------------------ state
@@ -258,18 +280,28 @@ export class World {
     if (this.canvas.width !== width || this.canvas.height !== height) {
       this.canvas.width = width;
       this.canvas.height = height;
+      if (this.autoFit) this.fitted = false;
     }
     if (!this.fitted) this.fit();
     this.clamp();
   }
 
+  /** Full screen on or off; either way, back to the whole park. */
+  setFill(fill) {
+    this.fill = fill;
+    this.fit();
+  }
+
   fit() {
     const w = this.size.width * T;
     const h = this.size.height * T;
-    this.scale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, Math.floor(Math.min(this.canvas.width / w, this.canvas.height / h)) || 1));
+    const exact = Math.min(this.canvas.width / w, this.canvas.height / h);
+    // Integer zoom keeps every pixel the same size; full screen trades that for filling the screen.
+    this.scale = this.fill ? Math.max(MIN_SCALE, exact) : Math.max(MIN_SCALE, Math.min(MAX_SCALE, Math.floor(exact) || 1));
     this.camX = w / 2 - this.canvas.width / this.scale / 2;
     this.camY = h / 2 - this.canvas.height / this.scale / 2;
     this.fitted = true;
+    this.autoFit = true;
     this.clamp();
   }
 
@@ -283,8 +315,11 @@ export class World {
   }
 
   zoomAt(delta, sx, sy) {
-    const next = Math.max(MIN_SCALE, Math.min(MAX_SCALE, this.scale + delta));
+    // From a fractional (full screen) scale, step to the next whole one.
+    const stepped = delta > 0 ? Math.floor(this.scale) + 1 : Math.ceil(this.scale) - 1;
+    const next = Math.max(MIN_SCALE, Math.min(MAX_SCALE, stepped));
     if (next === this.scale) return;
+    this.autoFit = false;
     const wx = this.camX + sx / this.scale;
     const wy = this.camY + sy / this.scale;
     this.scale = next;
@@ -297,6 +332,7 @@ export class World {
   focus(sessionId, scale = 3) {
     const p = this.pos.get(`t:${sessionId}`) ?? this.pos.get(`c:${sessionId}`);
     if (!p) return false;
+    this.autoFit = false;
     this.scale = Math.max(this.scale, scale);
     this.camX = p.x - this.canvas.width / this.scale / 2;
     this.camY = p.y - 16 - this.canvas.height / this.scale / 2;
@@ -322,7 +358,10 @@ export class World {
       const k = c.width / r.width / this.scale;
       const dx = e.clientX - drag.x;
       const dy = e.clientY - drag.y;
-      if (Math.abs(dx) + Math.abs(dy) > 4) drag.moved = true;
+      if (Math.abs(dx) + Math.abs(dy) > 4) {
+        drag.moved = true;
+        this.autoFit = false;
+      }
       this.camX = drag.camX - dx * k;
       this.camY = drag.camY - dy * k;
       this.clamp();
@@ -353,12 +392,18 @@ export class World {
     const toScreen = (x, y) => [Math.round((x - camX) * S), Math.round((y - camY) * S)];
     ctx.imageSmoothingEnabled = false;
     ctx.fillStyle = "#1f1a24";
+    if (this.fill) {
+      const lawn = ctx.createPattern(this.lawn, "repeat");
+      lawn.setTransform(new DOMMatrix([S, 0, 0, S, -camX * S, -camY * S]));
+      ctx.fillStyle = lawn;
+    }
     ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     ctx.drawImage(this.bg, camX, camY, this.canvas.width / S, this.canvas.height / S, 0, 0, this.canvas.width, this.canvas.height);
 
     const items = [];
     const hits = [];
-    const detailed = S >= 2;
+    // Names and bubbles from ×2; full screen shows them a bit sooner (a 1080p TV is ×1.6).
+    const detailed = S >= (this.fill ? 1.5 : 2);
 
     // Bar and terrace: all its tables set up (plus the ones further out if it gets that busy)
     const bar = barSpots(this.kennel.length);

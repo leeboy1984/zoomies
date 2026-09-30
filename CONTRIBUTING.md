@@ -81,12 +81,17 @@ The step-by-step loops for dogs, trainers, tiles, maps and props are in
 ## Screenshots
 
 The README images in `docs/img/` are generated from a scripted recording
-(`scripts/screenshots/scenario.mjs`) with headless Chrome. If your change is
-visible in them, regenerate them:
+(`scripts/screenshots/scenario.mjs`) with headless Chrome. **A new visible
+feature gets its own image in the README**, and a change visible in the
+existing ones regenerates them. A new image is a new entry in `images` (and,
+if it needs another screen size or URL, a new run with `viewport` and `query`)
+in `scripts/screenshots/shots.json`. The full loop is in
+`.claude/skills/readme-screenshots/SKILL.md`.
 
 ```sh
 npm run build
 npm run screenshots -- --burst     # frames into tmp/screenshots/burst-<run>/
+                                   # (--only <run>,… captures just those runs)
 # look at the frames and pick the moments you like
 # edit the times (and crops) in scripts/screenshots/shots.json
 npm run screenshots -- --compose   # docs/img/*.png from that same burst

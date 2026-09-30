@@ -4,6 +4,7 @@
 //   npm run screenshots -- --burst    capture bursts of full screenshots into tmp/screenshots/burst-<run>/
 //   npm run screenshots -- --compose  compose docs/img/*.png from those bursts, using the times in shots.json
 //   npm run screenshots               both, one after the other
+//   … --burst --only fullscreen,bar   capture only those runs (the other bursts are kept)
 //
 // Two runs never look exactly the same (movement follows the browser's real
 // frame timing), so the workflow is: capture a burst, look at the frames,
@@ -49,16 +50,17 @@ function chromePath() {
 /**
  * One run: fresh server, fresh Chrome, replay the scenario and take a full-page
  * screenshot at each requested second. `clockShiftMin` moves the page clock
- * forward (the bar only fills up after sessions have been idle for 5 minutes).
+ * forward (the bar only fills up after sessions have been idle for 5 minutes);
+ * `viewport` and `query` pick the screen size and the page URL (e.g. full screen).
  */
-async function captureRun({ times, clockShiftMin = 0, outDir }) {
+async function captureRun({ times, clockShiftMin = 0, outDir, viewport = VIEWPORT, query = "?view=world" }) {
   mkdirSync(outDir, { recursive: true });
   const scenario = join(TMP, "scenario.jsonl");
   writeFileSync(scenario, buildScenario());
   const server = spawn(process.execPath, ["bin/zoomies.mjs", "serve", "--port", String(PORT)], { cwd: ROOT, stdio: "ignore" });
   const chrome = spawn(chromePath(), [
     "--headless=new", `--remote-debugging-port=${DEVTOOLS}`, `--user-data-dir=${join(TMP, "chrome-profile")}`,
-    "--hide-scrollbars", "--no-first-run", "--no-default-browser-check", `--window-size=${VIEWPORT.width},${VIEWPORT.height}`, "about:blank",
+    "--hide-scrollbars", "--no-first-run", "--no-default-browser-check", `--window-size=${viewport.width},${viewport.height}`, "about:blank",
   ], { stdio: "ignore" });
   const stop = () => {
     chrome.kill();
@@ -87,13 +89,13 @@ async function captureRun({ times, clockShiftMin = 0, outDir }) {
     const cdp = (method, params = {}) => new Promise((r) => { const id = ++seq; pending.set(id, r); ws.send(JSON.stringify({ id, method, params })); });
 
     await cdp("Page.enable");
-    await cdp("Emulation.setDeviceMetricsOverride", { ...VIEWPORT, deviceScaleFactor: 1, mobile: false });
+    await cdp("Emulation.setDeviceMetricsOverride", { ...viewport, deviceScaleFactor: 1, mobile: false });
     // Seeded randomness, so two runs look (nearly) the same; optional clock shift.
     await cdp("Page.addScriptToEvaluateOnNewDocument", {
       source: `{let s=42;Math.random=()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};` +
         (clockShiftMin ? `const o=Date.now.bind(Date);Date.now=()=>o()+${clockShiftMin}*60000;` : "") + "}",
     });
-    await cdp("Page.navigate", { url: `http://127.0.0.1:${PORT}/?view=world` });
+    await cdp("Page.navigate", { url: `http://127.0.0.1:${PORT}/${query}` });
     await sleep(1500);
     const replay = spawn(process.execPath, ["bin/zoomies.mjs", "replay", scenario, "--port", String(PORT), "--keep-ids"], { cwd: ROOT, stdio: "ignore" });
     const t0 = Date.now();
@@ -150,12 +152,16 @@ function burstFrames(name) {
 
 const config = JSON.parse(readFileSync(new URL("./shots.json", import.meta.url), "utf8"));
 const both = !process.argv.includes("--burst") && !process.argv.includes("--compose");
+const onlyArg = process.argv.indexOf("--only");
+const only = onlyArg === -1 ? null : new Set(process.argv[onlyArg + 1].split(","));
+if (only) for (const name of only) if (!config.runs[name]) throw new Error(`unknown run "${name}" (shots.json has: ${Object.keys(config.runs).join(", ")})`);
 if (both || process.argv.includes("--burst")) {
   for (const [name, run] of Object.entries(config.runs)) {
+    if (only && !only.has(name)) continue;
     const times = [];
     for (let t = run.burst[0]; t <= run.burst[1] + 1e-9; t += run.burst[2]) times.push(Math.round(t * 10) / 10);
     rmSync(join(TMP, `burst-${name}`), { recursive: true, force: true });
-    await captureRun({ times, clockShiftMin: run.clockShiftMin, outDir: join(TMP, `burst-${name}`) });
+    await captureRun({ times, clockShiftMin: run.clockShiftMin, viewport: run.viewport, query: run.query, outDir: join(TMP, `burst-${name}`) });
     console.log(`tmp/screenshots/burst-${name}/  ${times.length} frames`);
   }
 }

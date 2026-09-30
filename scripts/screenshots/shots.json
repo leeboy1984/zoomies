@@ -15,6 +15,32 @@
         40,
         2
       ]
+    },
+    "fullscreen": {
+      "clockShiftMin": 0,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "query": "?fullscreen=1",
+      "burst": [
+        18,
+        30,
+        0.4
+      ]
+    },
+    "fullscreen-scenes": {
+      "clockShiftMin": 0,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "query": "?fullscreen=1&view=scenes",
+      "burst": [
+        18,
+        30,
+        2
+      ]
     }
   },
   "images": {
@@ -145,6 +171,34 @@
             715,
             1110,
             205
+          ]
+        }
+      ]
+    },
+    "fullscreen.png": {
+      "tiles": [
+        {
+          "run": "fullscreen",
+          "t": 22.8,
+          "crop": [
+            0,
+            0,
+            1920,
+            1080
+          ]
+        }
+      ]
+    },
+    "fullscreen-scenes.png": {
+      "tiles": [
+        {
+          "run": "fullscreen-scenes",
+          "t": 22.0,
+          "crop": [
+            0,
+            0,
+            1920,
+            1080
           ]
         }
       ]

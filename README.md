@@ -35,6 +35,16 @@ neon sign, while the dog naps beside the chair.
 
 ![Trainers ordering and drinking at the bar terrace, with their dogs asleep](docs/img/bar.png)
 
+**Full screen.** ⛶ or F turns a spare monitor or a TV into the park: the whole
+mega park edge to edge, with the lawn going on around it.
+
+![The mega park in full screen on a 1920×1080 screen, with the lawn around it](docs/img/fullscreen.png)
+
+The scenes view goes full screen too, laid out to make every scene as big as
+possible.
+
+![Four scenes in full screen as a 2×2 grid, with the kennel below](docs/img/fullscreen-scenes.png)
+
 ## Status
 
 Works end to end. One caveat: **the field names come from the official hooks
@@ -152,8 +162,18 @@ central avenue.
   no free table, they stand at the counter. Clicking a trainer at the bar sends the session back to its plot.
 - **Controls**: scroll or +/− to zoom, drag to move around and ⤢ to see
   everything. Clicking a trainer takes you to their plot.
+- **Full screen**: the **⛶ Full screen** button next to Mega park / Scenes (or
+  the F key) fills the screen with the view you are in, without the header,
+  zoom buttons or hints. The mega park shows edge to edge and as big as the
+  screen allows, with the lawn going on around it instead of black bars (zoom
+  and drag still work); the scenes grow to fit the screen, kennel included.
+  F or Esc leaves it. For a spare monitor or a
+  TV, open `http://127.0.0.1:3737/?fullscreen=1` (add `&view=scenes` for
+  the scenes): it starts that way, filling
+  the window (browsers only allow the real full screen after a click, so press
+  F or F11 once).
 - **Alerts**: an alert shows up at the top for every session that needs you;
-  clicking it takes you there.
+  clicking it takes you there (in full screen, they float over the park).
 - **Scenes view**: the **Scenes** button (or `?view=scenes`) switches to one
   scene per session, with its own kennel for idle sessions. The choice is
   remembered in the browser.

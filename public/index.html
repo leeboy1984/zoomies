@@ -13,12 +13,13 @@
       <nav class="views" aria-label="View">
         <button data-view="world" type="button">Mega park</button>
         <button data-view="scenes" type="button">Scenes</button>
+        <button id="fullscreen" type="button" title="Full screen (F)">⛶ Full screen</button>
       </nav>
     </header>
     <main>
       <p id="empty" hidden>
-        No sessions yet. Start Claude Code in a project with the zoomies hooks, or try
-        <code>node bin/zoomies.mjs replay examples/demo.jsonl</code>.
+        No sessions yet. Start Claude Code, Codex or Copilot CLI in a project with the
+        zoomies hooks, or try <code>npm run demo</code>.
       </p>
       <section id="world-view" hidden>
         <div class="world-bar">
@@ -30,7 +31,7 @@
           </div>
         </div>
         <canvas id="world" aria-label="Mega park with every session"></canvas>
-        <p class="hint">Scroll or +/− to zoom, drag to move around, click a trainer to jump to their plot. Trainers at the bar are idle sessions: click one to send it back to its plot.</p>
+        <p class="hint">Scroll or +/− to zoom, drag to move around, click a trainer to jump to their plot, F for full screen. Trainers at the bar are idle sessions: click one to send it back to its plot.</p>
       </section>
       <section id="scenes" aria-live="polite"></section>
       <section id="kennel" hidden>
